@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="js/tailwind.config.js">
+    <title>Click Event</title>
+</head>
+<body>
+
+    <div class="diff-button">
+        <button class="green" onclick="changeColor('green')"> Green</button>
+        <button class="red" onclick="changeColor('red')"> Red</button>
+        <button id="blue"> Blue</button>
+    </div>
+
+    <script>
+        // Renamed the function to avoid the naming conflict
+        function setBackgroundColorBlue(){
+            document.body.style.backgroundColor = 'blue';
+        }
+
+        const makeBlueButton = document.getElementById('blue');
+        makeBlueButton.onclick = setBackgroundColorBlue; // Correctly assigns the function to the onclick event
+
+        function changeColor(color){
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+
+</body>
+</html>
